@@ -3,7 +3,6 @@
 #CSE 2050
 
 import sys
-import deckofcards
 import setdeck
 
 if __name__ == '__main__':

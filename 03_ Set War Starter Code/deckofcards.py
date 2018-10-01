@@ -8,25 +8,37 @@ class DeckOfCards:
         self.deck = doublylinked.createlink(cards)
 
     def dealTop():
-        pass
+        return self.deck.removeFirst()
 
     def dealBottom():
-        pass
+        return self.deck.removeLast()
 
     def addBottom(card):
-        pass
+        self.deck.addLast(card)
 
     def addTop(cards):
-        pass
+        self.deck.addFirst(card)
 
     def addPileTop(pile):
-        pass
+        self.deck.addDeck(pile, 'top')
 
     def addPileBottom(pile):
-        pass
+        self.deck.addDeck(pile, 'bottom')
 
     def deal(nplayers, ncards=None):
-        pass
+        players = {}
+        cardind = ncards
+        for people in range(nplayers):
+            players{people: doublylinked.createlink(None)}
+        if ncards is None:
+            while self.deck._length > 0:
+                for play in range(nplayers):
+                    players[play].addFirst(self.removeFirst())
+        else:
+            while cardind > 0:
+                for play in range(nplayers):
+                    players[play].addFirst(self.removeFirst())
+                cardind -= 1
 
     def __len__():
-        pass
+        return self.deck._length
