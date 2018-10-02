@@ -7,14 +7,6 @@
 #immutable ex: int, float, string, tuple
 #mutable ex: lists, dicts, sets
 
-import sys
-
-if __name__ == '__main__':
-    numbers = []
-    for line in sys.stdin:
-        for n in line.split():
-            numbers.append(n)
-
 def Dict_create(lst):
     lst_dict = {}
     for x in range(len(lst)):
@@ -35,25 +27,19 @@ def third_card(card1, card2):
     return ''.join(card3)
 
 #Time Complexity of Function = O(n^2)
-def findset(list):
-    cards = Dict_create(numbers)                                            #assignment + dict function = loops n times + 1
+def findset(lst):
+    cards = Dict_create(lst)                                            #assignment + dict function = loops n times + 1
     third = ''                                                              #assignment = 1
-    num_of_cards = -1                                                       #assignment = 1
+    res = False                                                      #assignment = 1
     indA = 0                                                                #assignment = 1
     indB = 0                                                                #assignment = 1
     #loops n times
-    for indA in range(len(numbers)):
+    for indA in range(len(lst)):
         #loops n times
-        for indB in range(1, len(numbers)):
-            if (numbers[indA] != numbers[indB]):                            #expression = 1
-                third = third_card(numbers[indA], numbers[indB])            #assignment + function = depends on length of card
+        for indB in range(1, len(lst)):
+            if (lst[indA] != lst[indB]):                            #expression = 1
+                third = third_card(lst[indA], lst[indB])            #assignment + function = depends on length of card
                 if (third in cards):                                        #expession = 1
-                    if(num_of_cards == -1):                                 #expression = 1
-                        num_of_cards = cards[third] + 1                     #assignment + dictionary access = 2
-                    elif(max(cards[third], indA, indB) < num_of_cards):     #expression + max function = 2
-                        num_of_cards = max(cards[third], indA, indB) + 1    #assignment + max function + addition = 3
+                    res = True
         #print(indB)
-    return num_of_cards                                                     #return statement = 1
-
-
-print(findset(numbers))
+    return res                                                   #return statement = 1

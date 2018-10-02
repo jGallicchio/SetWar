@@ -42,7 +42,8 @@ class DeckOfCards:
         return players
 
     def view(self):
-        return self.deck.CreateList
+        curlst = self.deck.CreateList()
+        return curlst
 
     def __len__(self):
         return self.deck._length

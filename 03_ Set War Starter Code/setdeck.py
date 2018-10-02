@@ -4,5 +4,5 @@
 from deckofcards import DeckOfCards
 
 class SetDeck(DeckOfCards):
-    def __init__(self, cards):
+    def __init__(self, cards=None):
          DeckOfCards.__init__(self, cards)

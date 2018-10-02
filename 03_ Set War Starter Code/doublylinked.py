@@ -89,12 +89,12 @@ class DubLinkedList:
             return self
 
     def CreateList(self):
-        cur = self._head
         Lst = []
+        cur = self._head
         while cur is not None:
             Lst.append(cur.data)
             cur = cur.link
         return Lst
-        
+
     def __len__(self):
         return self._length
