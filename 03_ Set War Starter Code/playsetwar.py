@@ -4,7 +4,7 @@
 
 import sys
 from setdeck import SetDeck
-import findsetwar
+from FindSet import findset
 
 if __name__ == '__main__':
     players = sys.stdin.readline()
@@ -14,13 +14,22 @@ if __name__ == '__main__':
             cards.append(n)
 
 def checkWin():
-    pass
+    cardsontable = tabledeck.view()
+    if(findset(cardsontable) != -1):
+        return True
+    else:
+        return False
 
 def turn(player):
-    players[currentplayer].
+    tabledeck.addTop(players[currentplayer].dealTop())
+    if checkWin():
+        players[currentplayer].addPileBottom(tabledeck)
+        currentround += 1
+        if currentplayer == numberofplayers:
+            currentplayer = 0
+        else:
+            currentplayer += 1
 
-def round():
-    pass
 
 def play():
     while numberofplayers != 1:
@@ -36,6 +45,7 @@ def play():
 
 
 numberofplayers = players
+playersleft = numberofplayers
 currentplayer = 0
 currentround = 1
 startdeck = SetDeck(cards)

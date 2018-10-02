@@ -94,6 +94,7 @@ class DubLinkedList:
         while cur is not None:
             Lst.append(cur.data)
             cur = cur.link
-
+        return Lst
+        
     def __len__(self):
         return self._length
