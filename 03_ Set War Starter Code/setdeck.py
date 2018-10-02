@@ -1,7 +1,7 @@
 #Homework 03
 #Justin Gallicchio
 #CSE 2050
-import deckofcards
+from deckofcards import DeckOfCards
 
 class SetDeck(DeckOfCards):
     def __init__(self, cards):
